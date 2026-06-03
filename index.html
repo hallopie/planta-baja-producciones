@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manifiesto — Planta Baja Producciones</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root {
+    --azul-marino:  #0F1F3D;
+    --azul-medio:   #1E3A6E;
+    --azul-borde:   #162D55;
+    --azul-electrico: #4A90D9;
+    --azul-gris:    #7B9CC4;
+    --blanco:       #FFFFFF;
+    --gris-claro:   #F0F0F0;
+    --gris-texto:   #374151;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--azul-marino);
+    color: var(--blanco);
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* GRID LINES DE FONDO */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(78,144,217,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(78,144,217,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* WRAPPER */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    border-bottom: 1px solid var(--azul-borde);
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+
+  .studio-id {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--azul-gris);
+    line-height: 2;
+  }
+
+  .doc-id {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--azul-borde);
+    text-align: right;
+    line-height: 2;
+  }
+
+  .header-titulo {
+    position: relative;
+  }
+
+  .titulo-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+
+  h1 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(48px, 9vw, 110px);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    color: var(--blanco);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.4s;
+  }
+
+  h1 .linea-azul {
+    color: var(--azul-electrico);
+    display: block;
+  }
+
+  .header-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--azul-borde);
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.7s;
+  }
+
+  .hipotesis-header {
+    border-left: 2px solid var(--azul-electrico);
+    padding-left: 20px;
+  }
+
+  .hipotesis-header p {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--gris-claro);
+    line-height: 1.8;
+  }
+
+  .num-bg {
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    font-family: Arial Black, sans-serif;
+    font-size: 220px;
+    color: var(--azul-medio);
+    opacity: 0.12;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ─── SECCIONES ─── */
+  section {
+    border-bottom: 1px solid var(--azul-borde);
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sec-header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
+    margin-bottom: 56px;
+    align-items: start;
+  }
+
+  .sec-num {
+    font-family: Arial Black, sans-serif;
+    font-size: 72px;
+    color: var(--azul-medio);
+    opacity: 0.35;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .sec-titles {
+    padding-top: 8px;
+    border-top: 1px solid var(--azul-borde);
+  }
+
+  .sec-tag {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  h2 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--blanco);
+    line-height: 1;
+  }
+
+  /* PANELES */
+  .panel-grid {
+    display: grid;
+    gap: 2px;
+  }
+
+  .panel-grid-2 { grid-template-columns: 1fr 1fr; }
+  .panel-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .panel-grid-asim { grid-template-columns: 1.4fr 1fr; }
+
+  .panel {
+    background: var(--azul-medio);
+    border: 1px solid var(--azul-borde);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--azul-gris);
+    opacity: 0.6;
+  }
+
+  .panel-accent {
+    background: transparent;
+    border: 1px solid var(--azul-electrico);
+  }
+
+  .panel h3 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--azul-electrico);
+    margin-bottom: 16px;
+  }
+
+  .panel p {
+    font-size: 13px;
+    color: var(--azul-gris);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .panel p:last-child { margin-bottom: 0; }
+
+  .panel p strong {
+    color: var(--blanco);
+    font-weight: 700;
+  }
+
+  /* BLOQUE HIPÓTESIS */
+  .bloque-hipotesis {
+    background: transparent;
+    border: 1px solid var(--azul-electrico);
+    padding: 40px 44px;
+    margin: 48px 0;
+    position: relative;
+  }
+
+  .bloque-hipotesis::before {
+    content: 'HIPÓTESIS';
+    position: absolute;
+    top: -9px;
+    left: 32px;
+    background: var(--azul-marino);
+    padding: 0 12px;
+    font-family: Arial Black, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--azul-electrico);
+  }
+
+  .bloque-hipotesis p {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--blanco);
+    line-height: 1.9;
+  }
+
+  /* LISTA EXPERIMENTOS */
+  .exp-list { margin-top: 8px; }
+
+  .exp-row {
+    display: grid;
+    grid-template-columns: 60px 140px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--azul-borde);
+    padding: 28px 0;
+    align-items: start;
+  }
+
+  .exp-row:last-child { border-bottom: none; }
+
+  .exp-id {
+    font-family: Arial Black, sans-serif;
+    font-size: 28px;
+    color: var(--azul-medio);
+    line-height: 1.1;
+  }
+
+  .exp-tipo {
+    padding-top: 3px;
+    padding-right: 24px;
+    border-right: 1px solid var(--azul-borde);
+    margin-right: 24px;
+  }
+
+  .exp-tipo-tag {
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .exp-tipo span {
+    font-size: 11px;
+    color: var(--azul-gris);
+    line-height: 1.5;
+  }
+
+  .exp-desc h3 {
+    font-family: Arial Black, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--blanco);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .exp-desc p {
+    font-size: 12px;
+    color: var(--azul-gris);
+    line-height: 1.7;
+  }
+
+  .exp-pending {
+    opacity: 0.45;
+  }
+
+  /* CIERRE */
+  .cierre-section {
+    border-bottom: none;
+    padding: 100px 0 80px;
+  }
+
+  .cierre-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .cierre-frase {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(36px, 6vw, 72px);
+    text-transform: uppercase;
+    line-height: 0.92;
+    color: var(--blanco);
+    letter-spacing: -0.01em;
+  }
+
+  .cierre-frase .azul { color: var(--azul-electrico); }
+
+  .cierre-datos {
+    border: 1px solid var(--azul-borde);
+    padding: 28px 24px;
+  }
+
+  .cierre-datos p {
+    font-size: 11px;
+    color: var(--azul-gris);
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+
+  .cierre-datos .doc-line {
+    font-size: 9px;
+    color: var(--azul-borde);
+    letter-spacing: 0.2em;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--azul-borde);
+  }
+
+  /* PIE */
+  footer {
+    border-top: 1px solid var(--azul-borde);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer span {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--azul-borde);
+  }
+
+  /* ANIMACIONES */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .page { padding: 0 20px; }
+    .panel-grid-2,
+    .panel-grid-3,
+    .panel-grid-asim { grid-template-columns: 1fr; }
+    .header-bottom { grid-template-columns: 1fr; gap: 32px; }
+    .exp-row { grid-template-columns: 50px 1fr; }
+    .exp-tipo { display: none; }
+    .cierre-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 44px; }
+    .sec-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-meta">
+      <div class="studio-id">
+        Planta Baja Producciones<br>
+        Ciudad de México · 2026<br>
+        plantabajaproducciones.com
+      </div>
+      <div class="doc-id">
+        DOC · PB-001<br>
+        Versión 1.0<br>
+        Documento vivo
+      </div>
+    </div>
+
+    <div class="header-titulo">
+      <span class="titulo-label">Manifiesto fundacional</span>
+      <h1>
+        No le<br>
+        <span class="linea-azul">pedimos.</span>
+        Dirigimos.
+      </h1>
+      <div class="num-bg">01</div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="hipotesis-header">
+        <p>"Un artista con criterio y visión puede usar inteligencia artificial como herramienta de producción para crear obra auténtica — sin que la tecnología sustituya el proceso creativo humano. Solo lo hace más rápido, más barato y más accesible."</p>
+      </div>
+      <div style="padding-top:4px;">
+        <p style="font-size:11px; color:var(--azul-gris); line-height:1.9;">Este documento es el punto de partida de un experimento en tiempo real. No es una declaración de fe. Es una hipótesis que vamos a probar con proyectos reales, errores documentados y resultados publicados.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 QUIÉNES SOMOS -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">01</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Identidad</span>
+        <h2>Quiénes somos</h2>
+      </div>
+    </div>
+
+    <div class="panel-grid panel-grid-asim">
+      <div class="panel" data-label="Studio">
+        <h3>Planta Baja</h3>
+        <p>Somos un estudio de arte y producción audiovisual fundado con una convicción simple: <strong>hay miles de artistas en Latinoamérica con historias que contar y sin los recursos para contarlas.</strong></p>
+        <p>Hacemos cine, animación, cómic, ilustración y contenido. No nos importa el formato. Nos importa la visión detrás.</p>
+        <p>Existimos en el momento exacto en que una nueva generación de herramientas hace posible lo que antes requería presupuestos inalcanzables. Estamos aquí para aprovechar ese momento — y para documentarlo.</p>
+      </div>
+      <div class="panel panel-accent" data-label="Postura">
+        <h3>Lo que no somos</h3>
+        <p>No somos una productora tradicional esperando fondos institucionales.</p>
+        <p>No somos un canal de contenido buscando viralidad.</p>
+        <p>Somos un <strong>laboratorio en producción permanente</strong> — con proyectos reales, errores documentados y resultados publicados.</p>
+      </div>
+    </div>
+
+    <div class="panel-grid panel-grid-3" style="margin-top:2px;">
+      <div class="panel" data-label="Mercado">
+        <h3>Territorio</h3>
+        <p>Nuestro mercado principal de apoyo es Latinoamérica y las regiones que el sistema audiovisual tradicional llama "tercer mundo".</p>
+      </div>
+      <div class="panel" data-label="Razón">
+        <h3>Por qué</h3>
+        <p>Porque la reducción de costos que trae la IA cambiará quién puede contar historias para el mundo. El talento siempre estuvo aquí.</p>
+      </div>
+      <div class="panel" data-label="Red">
+        <h3>Plataforma</h3>
+        <p>Producimos, exponemos y damos visibilidad usando los foros y comunidades construidos desde Somos Enlace IA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 LA DISTINCIÓN -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">02</div>
+      <div class="sec-titles">
+        <span class="sec-tag">El argumento central</span>
+        <h2>La distinción</h2>
+      </div>
+    </div>
+
+    <div class="bloque-hipotesis">
+      <p>"Un artista con criterio y visión puede usar inteligencia artificial como herramienta de producción para crear obra auténtica — sin que la tecnología sustituya el proceso creativo humano. Solo lo hace más rápido, más barato y más accesible."</p>
+    </div>
+
+    <div class="panel-grid panel-grid-2">
+      <div class="panel" data-label="Esto no es Planta Baja">
+        <h3>❌ Delegación</h3>
+        <p>Pedirle a una IA que genere arte. Aceptar el primer resultado. Firmarlo como propio.</p>
+        <p style="color:var(--azul-gris); font-size:11px; margin-top:16px;">Prompt → resultado → firma.<br>La IA decidió. El humano aprobó.</p>
+      </div>
+      <div class="panel panel-accent" data-label="Esto es Planta Baja">
+        <h3>✓ Dirección</h3>
+        <p>Usar IA como infraestructura de producción. El artista define, itera, rechaza, decide. La IA ejecuta opciones.</p>
+        <p style="color:var(--azul-gris); font-size:11px; margin-top:16px;">Criterio → iteración → decisión → criterio.<br>El humano dirige. La IA ejecuta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 EL MÉTODO -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">03</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Método científico aplicado</span>
+        <h2>El experimento</h2>
+      </div>
+    </div>
+
+    <div class="panel-grid panel-grid-3" style="margin-bottom:2px;">
+      <div class="panel" data-label="Variable independiente">
+        <h3>Lo que controlamos</h3>
+        <p>El nivel de intervención humana en cada etapa: dirección, criterio estético, decisiones narrativas, curaduría de resultados.</p>
+      </div>
+      <div class="panel" data-label="Variables controladas">
+        <h3>Lo que mantenemos fijo</h3>
+        <p>Siempre hay un director humano con visión preexistente. La IA nunca toma decisiones sin aprobación. El resultado pasa por criterio artístico antes de existir.</p>
+      </div>
+      <div class="panel" data-label="Variable dependiente">
+        <h3>Lo que observamos</h3>
+        <p>La calidad percibida de la obra. Si el público detecta la mano humana. Si la obra comunica algo emocionalmente.</p>
+      </div>
+    </div>
+
+    <div class="panel panel-accent" style="margin-top:2px;" data-label="Metodología">
+      <h3>Cómo documentamos</h3>
+      <p>No basta con mostrar la obra terminada. Documentamos el proceso completo: las decisiones tomadas, las iteraciones rechazadas, los errores cometidos, los criterios aplicados. <strong>El proceso es parte del argumento.</strong></p>
+    </div>
+  </section>
+
+  <!-- 04 EXPERIMENTOS -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">04</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Casos de prueba</span>
+        <h2>Los proyectos</h2>
+      </div>
+    </div>
+
+    <div class="exp-list">
+      <div class="exp-row">
+        <div class="exp-id">1.0</div>
+        <div class="exp-tipo">
+          <span class="exp-tipo-tag">Formato</span>
+          <span>Animación<br>pura<br>2D</span>
+        </div>
+        <div class="exp-desc">
+          <h3>La Pandilla del Bosque</h3>
+          <p>Corto animado. Estilo cómic años 70. Adaptación libre de Winnie the Pooh ambientada en Ciudad Satélite, narrada desde la imaginación de un niño. Demuestra que la autoría visual es real cuando hay un director detrás de cada decisión estética.</p>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-id">1.1</div>
+        <div class="exp-tipo">
+          <span class="exp-tipo-tag">Formato</span>
+          <span>Performance<br>+<br>Animación</span>
+        </div>
+        <div class="exp-desc">
+          <h3>Ojos Láser</h3>
+          <p>Actuación humana real traducida a personaje animado — como Gollum, pero independiente con IA. Demuestra que la IA amplifica la actuación en lugar de reemplazarla. El cuerpo humano es la base; la tecnología construye encima.</p>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-id">2.0</div>
+        <div class="exp-tipo">
+          <span class="exp-tipo-tag">Formato</span>
+          <span>Live action<br>musical<br>+ IA</span>
+        </div>
+        <div class="exp-desc">
+          <h3>No Me Quiero Conectar</h3>
+          <p>Musical parodia. Un lunes de home office después de un fin de semana divertido — y la épica interna de no querer conectarse a las juntas. Actores reales, actuación real, emoción universal. La IA transforma el cuarto en set: cambia fondos, produce la música original, genera efectos visuales del género, afina voces, construye las transiciones dramáticas que el musical exige. Demuestra que con IA, cualquier departamento es Broadway — y cualquier lunes es material cinematográfico.</p>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-id">3.0</div>
+        <div class="exp-tipo">
+          <span class="exp-tipo-tag">Formato</span>
+          <span>Documental<br>largo<br>híbrido</span>
+        </div>
+        <div class="exp-desc">
+          <h3>Rulo y Yo</h3>
+          <p>Documental sobre cómo un DJ de radio mexicana frustró el desarrollo de decenas de bandas. Reconstrucción visual de escenas sin archivo. Historia real, personas reales, sistema documentado. Demuestra que la IA hace posible producciones de escala con equipo pequeño — y que podemos contar la historia de los que el sistema ignoró usando las herramientas que ese sistema no controló.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 A QUIÉN LE HABLAMOS -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">05</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Audiencia</span>
+        <h2>A quién le hablamos</h2>
+      </div>
+    </div>
+
+    <div class="panel-grid panel-grid-2">
+      <div class="panel" data-label="El artista">
+        <h3>El perfil</h3>
+        <p>El animador en Guadalajara que tiene la historia más original que has escuchado y no puede pagarle a un estudio.</p>
+        <p>El cineasta en Bogotá que lleva años esperando financiamiento que nunca llega.</p>
+        <p>El ilustrador en Lima que sabe exactamente qué quiere crear pero no tiene los recursos para escalarlo.</p>
+        <p>El artista en cualquier ciudad de América Latina — o de África, o de Asia — que el sistema llama "mercado emergente" como si emergir fuera opcional.</p>
+      </div>
+      <div class="panel panel-accent" data-label="La oportunidad">
+        <h3>Por qué ahora</h3>
+        <p>La IA no niveló el campo de juego por accidente. Lo niveló porque <strong>reduce drásticamente el costo de producción sin reducir la posibilidad de calidad.</strong></p>
+        <p>Lo que antes requería un equipo de 40 personas y millones de pesos ahora requiere criterio, visión y las herramientas correctas.</p>
+        <p><strong>El talento siempre estuvo en Latinoamérica. Lo que faltaba era la infraestructura.</strong> Planta Baja es parte de esa infraestructura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 LA PUERTA -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">06</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Comunidad</span>
+        <h2>La puerta abierta</h2>
+      </div>
+    </div>
+
+    <div class="panel-grid panel-grid-asim">
+      <div class="panel panel-accent" data-label="Invitación">
+        <h3>Quién puede entrar</h3>
+        <p>Si tienes un proyecto — cine, animación, cómic, ilustración, cualquier forma de arte — y no le tienes miedo a usar IA como herramienta para realizarlo, hay un lugar para ti aquí.</p>
+        <p>No pedimos que seas experto en tecnología. <strong>Pedimos que seas experto en tu visión.</strong> Las herramientas las aprendemos juntos.</p>
+        <p>La puerta está abierta desde el primer día. No desde cuando tengamos catálogo. Ahora.</p>
+      </div>
+      <div class="panel" data-label="Lo que ofrecemos">
+        <h3>Qué hay aquí</h3>
+        <p><strong>Producción</strong> — proyectos propios y colaborativos</p>
+        <p><strong>Exposición</strong> — visibilidad en foros y comunidades de Somos Enlace IA</p>
+        <p><strong>Documentación</strong> — el proceso completo, público</p>
+        <p><strong>Distribución</strong> — viene cuando haya catálogo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cierre-section">
+    <div class="cierre-grid">
+      <div class="cierre-frase">
+        La excusa<br>
+        de que crear<br>
+        <span class="azul">cuesta</span><br>
+        demasiado<br>
+        ya no existe.
+      </div>
+      <div class="cierre-datos">
+        <p>
+          PLANTA BAJA PRODUCCIONES<br>
+          Ciudad de México<br>
+          México · 2026<br>
+          <br>
+          En colaboración con<br>
+          SOMOS ENLACE IA<br>
+          www.quieroaprenderia.com<br>
+        </p>
+        <p class="doc-line">
+          PB-MANIFIESTO-001 · V1.0<br>
+          Documento vivo — sujeto a revisión<br>
+          conforme avanza el experimento
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Planta Baja Producciones · CDMX · 2026</span>
+    <span>PB-001 · Manifiesto Fundacional</span>
+    <span>Somos Enlace IA · quieroaprenderia.com</span>
+  </footer>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

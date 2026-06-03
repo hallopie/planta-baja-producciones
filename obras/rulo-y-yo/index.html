@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rulo y Yo — Planta Baja</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+  :root{--azul-marino:#0F1F3D;--azul-medio:#1E3A6E;--azul-borde:#162D55;--azul-electrico:#4A90D9;--azul-gris:#7B9CC4;--blanco:#FFFFFF;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--azul-marino);color:var(--blanco);font-family:'Courier Prime','Courier New',monospace;font-size:13px;line-height:1.7;}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(74,144,217,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,217,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+  .page{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 40px;}
+  nav{padding:24px 0;border-bottom:1px solid var(--azul-borde);display:flex;justify-content:space-between;}
+  nav a{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--azul-gris);text-decoration:none;}
+  nav a:hover{color:var(--azul-electrico);}
+  .hero{padding:80px 0 60px;border-bottom:1px solid var(--azul-borde);}
+  .proj-id{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--azul-electrico);margin-bottom:16px;display:block;}
+  h1{font-family:Arial Black,Arial,sans-serif;font-size:clamp(40px,8vw,90px);line-height:0.9;text-transform:uppercase;color:var(--blanco);margin-bottom:24px;}
+  .status{display:inline-block;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;padding:4px 12px;border:1px solid var(--azul-electrico);color:var(--azul-electrico);}
+  section{padding:60px 0;border-bottom:1px solid var(--azul-borde);}
+  h2{font-family:Arial Black,Arial,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blanco);margin-bottom:24px;}
+  .sec-tag{font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--azul-electrico);margin-bottom:8px;display:block;}
+  p{color:var(--azul-gris);font-size:13px;line-height:1.8;margin-bottom:12px;}
+  p strong{color:var(--blanco);}
+  .log-entry{border-left:2px solid var(--azul-electrico);padding:16px 24px;margin-bottom:2px;background:var(--azul-medio);}
+  .log-fecha{font-size:9px;letter-spacing:0.3em;color:var(--azul-electrico);margin-bottom:8px;display:block;}
+  .log-entry p{margin:0;color:var(--azul-gris);}
+  .video-embed{background:var(--azul-medio);border:1px solid var(--azul-borde);padding:40px;text-align:center;margin:16px 0;}
+  .video-embed p{color:var(--azul-gris);font-size:11px;margin:0;}
+  .tag{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--azul-borde);color:var(--azul-gris);margin:4px 4px 4px 0;}
+  .aviso{border:1px solid var(--azul-borde);padding:20px 24px;margin:24px 0;background:rgba(74,144,217,0.04);}
+  .aviso p{margin:0;font-size:12px;color:var(--azul-gris);}
+  footer{padding:24px 0;display:flex;justify-content:space-between;border-top:1px solid var(--azul-borde);}
+  footer span{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--azul-borde);}
+  @media(max-width:700px){.page{padding:0 20px;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <a href="../../index.html">← Planta Baja</a>
+    <a href="../">Obras</a>
+  </nav>
+  <div class="hero">
+    <span class="proj-id">Proyecto 3.0 · Documental · Homenaje a Michael Moore</span>
+    <h1>Rulo<br>y Yo</h1>
+    <span class="status">● En desarrollo</span>
+  </div>
+  <section>
+    <span class="sec-tag">El proyecto</span>
+    <h2>Qué es</h2>
+    <p>Documental sobre cómo un DJ de radio mexicana frustró el desarrollo de decenas de bandas. Historia real. Personas reales. El sistema documentado con las mismas herramientas que ese sistema nunca controló.</p>
+    <p><strong>Lo que demuestra:</strong> que un equipo pequeño puede producir un documental de largo aliento con IA — reconstrucción de escenas sin archivo, investigación acelerada, identidad visual completa — sin depender del sistema que estamos documentando.</p>
+    <div class="aviso">
+      <p>Este proyecto está en desarrollo activo. Los testimonios y materiales de investigación no se publican hasta que el proyecto esté en etapa de distribución.</p>
+    </div>
+    <div style="margin-top:20px;">
+      <span class="tag">Documental</span>
+      <span class="tag">Radio mexicana</span>
+      <span class="tag">Reconstrucción visual</span>
+      <span class="tag">Historia real</span>
+      <span class="tag">Largometraje</span>
+    </div>
+  </section>
+  <section>
+    <span class="sec-tag">Registro de avances</span>
+    <h2>Bitácora</h2>
+    <p>Cada entrada documenta decisiones tomadas, no solo resultados. Los testimonios y nombres específicos no se registran aquí hasta etapa de distribución.</p>
+    <div class="log-entry">
+      <span class="log-fecha">2026-06 · Inicio</span>
+      <p>Proyecto definido. Investigación inicial en curso. Primeros contactos establecidos.</p>
+    </div>
+  </section>
+  <section>
+    <span class="sec-tag">Material de proceso</span>
+    <h2>Videos de prueba</h2>
+    <p>Las pruebas de reconstrucción visual se irán agregando conforme avance la producción.</p>
+    <div class="video-embed">
+      <p>Material de proceso próximamente.</p>
+    </div>
+  </section>
+  <footer>
+    <span>Planta Baja Producciones · 2026</span>
+    <span>Proyecto 3.0</span>
+    <span>hallopie.github.io/planta-baja-producciones</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obras — Planta Baja</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+  :root{--azul-marino:#0F1F3D;--azul-medio:#1E3A6E;--azul-borde:#162D55;--azul-electrico:#4A90D9;--azul-gris:#7B9CC4;--blanco:#FFFFFF;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--azul-marino);color:var(--blanco);font-family:'Courier Prime','Courier New',monospace;font-size:13px;line-height:1.7;}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(74,144,217,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,217,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+  .page{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 40px;}
+  nav{padding:24px 0;border-bottom:1px solid var(--azul-borde);display:flex;justify-content:space-between;}
+  nav a{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--azul-gris);text-decoration:none;}
+  nav a:hover{color:var(--azul-electrico);}
+  .hero{padding:80px 0 60px;border-bottom:1px solid var(--azul-borde);}
+  .page-tag{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--azul-electrico);margin-bottom:16px;display:block;}
+  h1{font-family:Arial Black,Arial,sans-serif;font-size:clamp(40px,8vw,90px);line-height:0.9;text-transform:uppercase;color:var(--blanco);}
+  .obras-grid{padding:60px 0;}
+  .obra-row{display:grid;grid-template-columns:80px 160px 1fr 120px;gap:0;border-bottom:1px solid var(--azul-borde);padding:32px 0;align-items:start;text-decoration:none;transition:background 0.2s;}
+  .obra-row:hover{background:rgba(74,144,217,0.04);}
+  .obra-id{font-family:Arial Black,Arial,sans-serif;font-size:40px;color:var(--azul-medio);opacity:0.4;line-height:1;}
+  .obra-tipo{padding-right:24px;border-right:1px solid var(--azul-borde);margin-right:24px;}
+  .obra-tipo-tag{font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--azul-electrico);display:block;margin-bottom:6px;}
+  .obra-tipo span{font-size:11px;color:var(--azul-gris);line-height:1.6;}
+  .obra-titulo{font-family:Arial Black,Arial,sans-serif;font-size:22px;text-transform:uppercase;color:var(--blanco);letter-spacing:0.03em;margin-bottom:8px;}
+  .obra-desc{font-size:12px;color:var(--azul-gris);line-height:1.7;}
+  .obra-status{text-align:right;padding-top:4px;}
+  .status-dot{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--azul-electrico);}
+  footer{padding:24px 0;display:flex;justify-content:space-between;border-top:1px solid var(--azul-borde);}
+  footer span{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--azul-borde);}
+  @media(max-width:700px){.page{padding:0 20px;}.obra-row{grid-template-columns:50px 1fr;}.obra-tipo,.obra-status{display:none;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <a href="../index.html">← Planta Baja</a>
+    <a href="../protocolo/">Protocolo</a>
+  </nav>
+
+  <div class="hero">
+    <span class="page-tag">El experimento en curso</span>
+    <h1>Obras</h1>
+  </div>
+
+  <div class="obras-grid">
+    <a class="obra-row" href="la-pandilla/">
+      <div class="obra-id">1.0</div>
+      <div class="obra-tipo">
+        <span class="obra-tipo-tag">Formato</span>
+        <span>Animación<br>pura 2D</span>
+      </div>
+      <div>
+        <div class="obra-titulo">La Pandilla del Bosque</div>
+        <p class="obra-desc">Corto animado. Estilo cómic años 70. Adaptación de Winnie the Pooh en Ciudad Satélite, narrada desde la imaginación de un niño en Halloween.</p>
+      </div>
+      <div class="obra-status"><span class="status-dot">● En producción</span></div>
+    </a>
+
+    <a class="obra-row" href="ojos-laser/">
+      <div class="obra-id">1.1</div>
+      <div class="obra-tipo">
+        <span class="obra-tipo-tag">Formato</span>
+        <span>Performance<br>+ Animación</span>
+      </div>
+      <div>
+        <div class="obra-titulo">Ojos Láser</div>
+        <p class="obra-desc">Actuación humana real traducida a personaje animado. El cuerpo humano como base; la IA construye encima.</p>
+      </div>
+      <div class="obra-status"><span class="status-dot">● En desarrollo</span></div>
+    </a>
+
+    <a class="obra-row" href="no-me-quiero-conectar/">
+      <div class="obra-id">2.0</div>
+      <div class="obra-tipo">
+        <span class="obra-tipo-tag">Formato</span>
+        <span>Live action<br>musical + IA</span>
+      </div>
+      <div>
+        <div class="obra-titulo">No Me Quiero Conectar</div>
+        <p class="obra-desc">Musical parodia sobre el lunes de home office. Actores reales, mundo transformado por IA.</p>
+      </div>
+      <div class="obra-status"><span class="status-dot">● En preproducción</span></div>
+    </a>
+
+    <a class="obra-row" href="rulo-y-yo/">
+      <div class="obra-id">3.0</div>
+      <div class="obra-tipo">
+        <span class="obra-tipo-tag">Formato</span>
+        <span>Documental<br>largo</span>
+      </div>
+      <div>
+        <div class="obra-titulo">Rulo y Yo</div>
+        <p class="obra-desc">Documental sobre cómo un DJ de radio mexicana frustró a decenas de bandas. Historia real. Homenaje a Michael Moore.</p>
+      </div>
+      <div class="obra-status"><span class="status-dot">● En desarrollo</span></div>
+    </a>
+  </div>
+
+  <footer>
+    <span>Planta Baja Producciones · 2026</span>
+    <span>Obras</span>
+    <span>hallopie.github.io/planta-baja-producciones</span>
+  </footer>
+</div>
+</body>
+</html>

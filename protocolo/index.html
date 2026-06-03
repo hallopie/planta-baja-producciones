@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de Documentación — Planta Baja</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root {
+    --azul-marino:    #0F1F3D;
+    --azul-medio:     #1E3A6E;
+    --azul-borde:     #162D55;
+    --azul-electrico: #4A90D9;
+    --azul-gris:      #7B9CC4;
+    --blanco:         #FFFFFF;
+    --gris-claro:     #F0F0F0;
+    --gris-texto:     #374151;
+    --gris-alt:       #E8EFF8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--azul-marino);
+    color: var(--blanco);
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74,144,217,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,144,217,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ── PORTADA ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+    border-bottom: 1px solid var(--azul-borde);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+
+  .cover-meta span {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--azul-gris);
+    line-height: 2;
+  }
+
+  .cover-tag {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.3s;
+  }
+
+  .cover-titulo {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(40px, 8vw, 96px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--blanco);
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.5s;
+  }
+
+  .cover-sub {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--azul-gris);
+    margin-top: 32px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.8s;
+  }
+
+  .cover-divider {
+    width: 100%;
+    height: 2px;
+    background: var(--azul-electrico);
+    margin: 48px 0;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards 1s;
+  }
+
+  .cover-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.1s;
+  }
+
+  .cover-bottom p {
+    font-size: 11px;
+    color: var(--azul-gris);
+    letter-spacing: 0.1em;
+    line-height: 2.2;
+  }
+
+  .cover-num-bg {
+    position: absolute;
+    right: -40px;
+    bottom: -60px;
+    font-family: Arial Black, sans-serif;
+    font-size: 300px;
+    color: var(--azul-medio);
+    opacity: 0.08;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── SECCIONES ── */
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--azul-borde);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  section.visible { opacity: 1; transform: translateY(0); }
+
+  .sec-header {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    margin-bottom: 56px;
+    align-items: start;
+  }
+
+  .sec-num {
+    font-family: Arial Black, sans-serif;
+    font-size: 64px;
+    color: var(--azul-medio);
+    opacity: 0.35;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .sec-titles {
+    padding-top: 8px;
+    border-top: 1px solid var(--azul-borde);
+  }
+
+  .sec-tag {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  h2 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(24px, 4vw, 44px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--blanco);
+    line-height: 1;
+  }
+
+  h3 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--azul-electrico);
+    margin: 36px 0 12px;
+  }
+
+  p.body {
+    font-size: 13px;
+    color: var(--azul-gris);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  p.body strong { color: var(--blanco); }
+
+  /* ── INFOBOX ── */
+  .infobox {
+    border: 1px solid var(--azul-electrico);
+    background: rgba(74,144,217,0.05);
+    padding: 28px 32px;
+    margin: 32px 0;
+    position: relative;
+  }
+
+  .infobox::before {
+    content: attr(data-label);
+    position: absolute;
+    top: -9px;
+    left: 24px;
+    background: var(--azul-marino);
+    padding: 0 10px;
+    font-family: Arial Black, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--azul-electrico);
+    text-transform: uppercase;
+  }
+
+  .infobox p {
+    font-size: 13px;
+    color: var(--blanco);
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  .infobox .mono {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    color: var(--azul-gris);
+    line-height: 2;
+    margin-top: 12px;
+  }
+
+  /* ── LISTAS ── */
+  ul.dash {
+    list-style: none;
+    margin: 8px 0 16px 20px;
+  }
+
+  ul.dash li {
+    font-size: 13px;
+    color: var(--azul-gris);
+    line-height: 1.8;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  ul.dash li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--azul-electrico);
+  }
+
+  ul.checks {
+    list-style: none;
+    margin: 8px 0 16px 20px;
+  }
+
+  ul.checks li {
+    font-size: 13px;
+    color: var(--azul-gris);
+    line-height: 1.8;
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  ul.checks li::before {
+    content: '□';
+    position: absolute;
+    left: 0;
+    color: var(--azul-electrico);
+    font-size: 14px;
+  }
+
+  /* ── TABLAS ── */
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 12px;
+  }
+
+  .tabla th {
+    background: var(--azul-medio);
+    color: var(--blanco);
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid var(--azul-borde);
+  }
+
+  .tabla td {
+    padding: 10px 16px;
+    border: 1px solid #c8d8ec;
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .tabla tr:nth-child(odd) td  { background: var(--gris-claro); color: var(--gris-texto); }
+  .tabla tr:nth-child(even) td { background: var(--gris-alt);   color: var(--gris-texto); }
+
+  .tabla td:first-child {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 11px;
+    color: #0F1F3D;
+    white-space: pre-line;
+  }
+
+  /* ── GRID 2 COL ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+  }
+
+  .panel {
+    background: var(--azul-medio);
+    border: 1px solid var(--azul-borde);
+    padding: 28px 24px;
+  }
+
+  .panel.accent {
+    background: transparent;
+    border-color: var(--azul-electrico);
+  }
+
+  .panel h4 {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--azul-electrico);
+    margin-bottom: 12px;
+  }
+
+  .panel p {
+    font-size: 12px;
+    color: var(--azul-gris);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .panel p:last-child { margin-bottom: 0; }
+
+  /* ── PROYECTO TAG ── */
+  .proy-tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--azul-electrico);
+    border: 1px solid var(--azul-electrico);
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+
+  /* ── CIERRE ── */
+  .cierre-section {
+    border-bottom: none;
+    padding: 100px 0 80px;
+    text-align: center;
+  }
+
+  .cierre-frase {
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: clamp(28px, 5vw, 60px);
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--blanco);
+    margin-bottom: 32px;
+  }
+
+  .cierre-frase span { color: var(--azul-electrico); }
+
+  .cierre-sub {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--azul-gris);
+    margin-bottom: 60px;
+  }
+
+  .cierre-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--azul-electrico);
+    margin: 0 auto 40px;
+  }
+
+  .cierre-firma {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--azul-borde);
+    line-height: 2.4;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--azul-borde);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer span {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--azul-borde);
+  }
+
+  /* ── ANIMACIONES ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 0 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .cover-bottom { grid-template-columns: 1fr; gap: 24px; }
+    .sec-header { grid-template-columns: 60px 1fr; }
+    .sec-num { font-size: 44px; }
+    .cover-num-bg { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PORTADA -->
+  <div class="cover">
+    <div class="cover-meta">
+      <span>Planta Baja Producciones<br>Ciudad de México · 2026</span>
+      <span style="text-align:right">DOC · PB-002<br>Versión 1.0 · Uso interno</span>
+    </div>
+    <span class="cover-tag">Protocolo fundacional</span>
+    <div class="cover-titulo">Protocolo<br>de Documentación</div>
+    <p class="cover-sub">Cómo registramos el experimento</p>
+    <div class="cover-divider"></div>
+    <div class="cover-bottom">
+      <p>
+        PLANTA BAJA PRODUCCIONES<br>
+        Ciudad de México · México<br>
+        Documento de uso interno
+      </p>
+      <p>
+        En colaboración con<br>
+        SOMOS ENLACE IA<br>
+        quieroaprenderia.com
+      </p>
+    </div>
+    <div class="cover-num-bg">02</div>
+  </div>
+
+  <!-- 01 POR QUÉ DOCUMENTAMOS -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">01</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Fundamento</span>
+        <h2>Por qué documentamos</h2>
+      </div>
+    </div>
+
+    <p class="body"><strong>Este protocolo no existe para crear contenido. Existe para producir evidencia.</strong></p>
+    <p class="body">El manifiesto de Planta Baja plantea una hipótesis: que un artista con criterio puede usar IA para crear obra auténtica sin que la tecnología sustituya el proceso humano. Una hipótesis sin evidencia es solo una opinión.</p>
+    <p class="body">Cada proyecto que producimos es un caso de prueba. El registro de ese proceso — decisiones, iteraciones, errores, criterios — es la evidencia que convierte la opinión en argumento.</p>
+
+    <div class="infobox" data-label="El principio base">
+      <p>Mientras produces, documentas. No después.</p>
+      <p class="mono">Documentar después distorsiona la memoria y pierde los detalles que hacen valiosa la evidencia.<br>
+      El registro ocurre en el mismo momento en que se toma la decisión, se genera el resultado o se comete el error.</p>
+    </div>
+
+    <p class="body">El registro tiene tres audiencias distintas — y las tres importan:</p>
+    <table class="tabla">
+      <thead><tr><th>Audiencia</th><th>Para qué sirve</th></tr></thead>
+      <tbody>
+        <tr><td>El equipo interno</td><td>Saber qué se decidió, por qué, y cómo replicarlo o mejorarlo</td></tr>
+        <tr><td>El público externo</td><td>Ver que hay un proceso humano real detrás de cada proyecto</td></tr>
+        <tr><td>El manifiesto</td><td>Evidencia científica de que la hipótesis se confirma o se ajusta</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 02 QUÉ SE DOCUMENTA SIEMPRE -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">02</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Categorías</span>
+        <h2>Qué se documenta siempre</h2>
+      </div>
+    </div>
+
+    <p class="body">Sin importar el proyecto ni la etapa, estas cinco categorías se registran en cada sesión de trabajo:</p>
+
+    <h3>1. Las decisiones tomadas</h3>
+    <p class="body">Cada vez que eliges una dirección sobre otra — un estilo, un personaje, una escena, una paleta — eso se registra. No solo el resultado: el razonamiento.</p>
+    <ul class="dash">
+      <li>¿Qué opciones había?</li>
+      <li>¿Cuál elegiste?</li>
+      <li>¿Por qué esa y no las otras?</li>
+    </ul>
+
+    <h3>2. Las iteraciones rechazadas</h3>
+    <p class="body">Todo lo que la IA generó y no usaste es tan importante como lo que sí usaste. Muestra que hubo criterio. Guarda capturas o archivos de los resultados descartados con una nota breve de por qué no funcionaron.</p>
+
+    <h3>3. Los errores cometidos</h3>
+    <p class="body">Los errores no se ocultan — se documentan. Un error documentado tiene dos valores: evita repetirlo, y demuestra que el proceso es real. <strong>Los experimentos tienen errores. Las presentaciones de marketing no los muestran. Nosotros sí.</strong></p>
+
+    <h3>4. Los prompts utilizados</h3>
+    <p class="body">Cada prompt que produjo un resultado relevante — positivo o negativo — se guarda completo. No solo el resultado final: el prompt exacto, el motor usado, y una nota del resultado.</p>
+
+    <h3>5. El tiempo invertido</h3>
+    <p class="body">Por sesión y por etapa. No para justificarse — para demostrar que la IA reduce tiempos reales y para tener datos comparables entre proyectos.</p>
+  </section>
+
+  <!-- 03 TRES NIVELES -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">03</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Destino del material</span>
+        <h2>Los tres niveles de registro</h2>
+      </div>
+    </div>
+
+    <p class="body">No todo el material capturado tiene el mismo destino. Hay tres niveles con propósito distinto:</p>
+
+    <table class="tabla">
+      <thead><tr><th>Nivel</th><th>Descripción y destino</th></tr></thead>
+      <tbody>
+        <tr><td>Nivel 1<br>Proceso interno</td><td>Notas brutas, prompts, capturas de pantalla, archivos descartados. Solo para el equipo. No se publica. Se guarda en Drive organizado por proyecto y fecha.</td></tr>
+        <tr><td>Nivel 2<br>Making of</td><td>Material editado del proceso — fragmentos de pantalla, comparativas antes/después, momentos clave de decisión. Destinado a YouTube, redes y documentación pública del experimento.</td></tr>
+        <tr><td>Nivel 3<br>Evidencia científica</td><td>El registro estructurado que alimenta el manifiesto: variables, resultados, conclusiones por proyecto. Se redacta al cierre de cada proyecto como reporte de caso.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="infobox" data-label="Regla práctica">
+      <p>Captura siempre en Nivel 1. Decide después qué sube a Nivel 2 o 3.</p>
+      <p class="mono">Es más fácil descartar material que recuperar lo que no se capturó.</p>
+    </div>
+  </section>
+
+  <!-- 04 CUÁNDO SE DOCUMENTA -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">04</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Timing</span>
+        <h2>Cuándo se documenta</h2>
+      </div>
+    </div>
+
+    <p class="body">El registro tiene tres momentos fijos en cada sesión de trabajo:</p>
+
+    <div class="grid-2" style="margin-top:32px;">
+      <div class="panel">
+        <h4>Antes — 5 minutos</h4>
+        <ul class="dash">
+          <li>Escribe en una línea qué vas a trabajar hoy</li>
+          <li>Anota el estado en que dejaste el proyecto</li>
+          <li>Define qué decisión necesitas lograr hoy</li>
+        </ul>
+      </div>
+      <div class="panel accent">
+        <h4>Al cerrar — 10 minutos</h4>
+        <ul class="dash">
+          <li>Resume en 3 líneas: qué avanzó, qué no, por qué</li>
+          <li>Organiza los archivos en su carpeta</li>
+          <li>Deja nota del siguiente paso claro</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Durante la sesión — en tiempo real</h3>
+    <ul class="dash">
+      <li>Captura pantalla de cada resultado relevante — bueno, malo o descartado</li>
+      <li>Copia el prompt exacto cada vez que generes algo</li>
+      <li>Nota de texto breve (una línea) con cada decisión importante</li>
+      <li>Si algo no funciona, escribe por qué antes de seguir</li>
+    </ul>
+
+    <div class="infobox" data-label="Tiempo total por sesión">
+      <p>5 min antes + registro en tiempo real + 10 min al cierre</p>
+      <p class="mono">Si una sesión de producción dura 2 horas, la documentación agrega menos de 15 minutos.<br>No es una carga — es un hábito.</p>
+    </div>
+  </section>
+
+  <!-- 05 CHECKLIST -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">05</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Lista de verificación</span>
+        <h2>Checklist por sesión</h2>
+      </div>
+    </div>
+
+    <p class="body">Lo que no puede faltar en cada sesión de trabajo, sin excepción:</p>
+
+    <h3>Antes</h3>
+    <ul class="checks">
+      <li>Definí qué voy a trabajar hoy (una línea)</li>
+      <li>Revisé en qué estado quedó el proyecto</li>
+      <li>Tengo clara la decisión o avance que necesito lograr</li>
+    </ul>
+
+    <h3>Durante</h3>
+    <ul class="checks">
+      <li>Guardé captura de cada resultado relevante</li>
+      <li>Copié el prompt exacto de cada generación importante</li>
+      <li>Anoté el criterio de cada decisión tomada</li>
+      <li>Guardé también los resultados descartados con nota de por qué</li>
+      <li>Anoté el tiempo de la sesión</li>
+    </ul>
+
+    <h3>Al cerrar</h3>
+    <ul class="checks">
+      <li>Escribí el resumen de 3 líneas: qué avanzó, qué no, por qué</li>
+      <li>Organicé los archivos de la sesión en su carpeta</li>
+      <li>Dejé nota del siguiente paso para la próxima sesión</li>
+      <li>Si hubo un error importante, lo documenté por separado</li>
+    </ul>
+  </section>
+
+  <!-- 06 ORGANIZACIÓN DE ARCHIVOS -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">06</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Estructura</span>
+        <h2>Organización de archivos</h2>
+      </div>
+    </div>
+
+    <p class="body">Estructura de carpetas en Drive — igual para todos los proyectos:</p>
+
+    <div class="infobox" data-label="Estructura de carpetas">
+      <p class="mono">
+        PLANTA BAJA / [PROYECTO] /<br>
+        &nbsp;&nbsp;├── 01_proceso_interno /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── prompts /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── capturas /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── descartados /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── notas_sesion /<br>
+        &nbsp;&nbsp;├── 02_making_of /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── video /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── fotos /<br>
+        &nbsp;&nbsp;├── 03_evidencia /<br>
+        &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── reporte_final.docx<br>
+        &nbsp;&nbsp;└── 04_entregables /<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [versiones finales]
+      </p>
+    </div>
+
+    <h3>Nomenclatura de archivos</h3>
+    <ul class="dash">
+      <li>Notas de sesión: <strong>YYYYMMDD_[proyecto]_sesion.txt</strong></li>
+      <li>Capturas: <strong>YYYYMMDD_[proyecto]_[descripcion].png</strong></li>
+      <li>Prompts: <strong>YYYYMMDD_[proyecto]_prompt_[motor].txt</strong></li>
+    </ul>
+  </section>
+
+  <!-- 07 PARTICULARIDADES -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">07</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Por proyecto</span>
+        <h2>Particularidades por proyecto</h2>
+      </div>
+    </div>
+
+    <p class="body">Además del protocolo general, cada proyecto tiene elementos específicos que registrar por su naturaleza:</p>
+
+    <!-- 1.0 -->
+    <h3>1.0 — La Pandilla del Bosque</h3>
+    <span class="proy-tag">Animación pura · 2D</span>
+    <table class="tabla">
+      <thead><tr><th>Qué registrar</th><th>Por qué importa</th></tr></thead>
+      <tbody>
+        <tr><td>Cada prompt de personaje y locación</td><td>Demuestra que el diseño es dirigido, no generado al azar</td></tr>
+        <tr><td>Frames ganadores vs descartados</td><td>Evidencia del criterio estético en acción</td></tr>
+        <tr><td>Referencias @img usadas por escena</td><td>Muestra el sistema de consistencia visual construido</td></tr>
+        <tr><td>Decisiones de paleta y estilo</td><td>El director eligió — no la IA</td></tr>
+        <tr><td>Tiempo por plano generado</td><td>Dato de eficiencia vs producción tradicional</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 1.1 -->
+    <h3>1.1 — Ojos Láser</h3>
+    <span class="proy-tag">Performance + Animación</span>
+    <table class="tabla">
+      <thead><tr><th>Qué registrar</th><th>Por qué importa</th></tr></thead>
+      <tbody>
+        <tr><td>Video de la actuación original</td><td>La base humana que la IA tradujo — evidencia central</td></tr>
+        <tr><td>Comparativa actuación vs resultado animado</td><td>El argumento visual más poderoso del proyecto</td></tr>
+        <tr><td>Decisiones de traducción visual</td><td>Qué del cuerpo humano se preservó y qué se interpretó</td></tr>
+        <tr><td>Iteraciones del personaje animado</td><td>El proceso de refinamiento hasta el resultado final</td></tr>
+        <tr><td>Feedback del actor sobre el resultado</td><td>Testimonio de que la tecnología amplificó, no reemplazó</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 2.0 -->
+    <h3>2.0 — No Me Quiero Conectar</h3>
+    <span class="proy-tag">Live action musical + IA</span>
+    <table class="tabla">
+      <thead><tr><th>Qué registrar</th><th>Por qué importa</th></tr></thead>
+      <tbody>
+        <tr><td>Material crudo de rodaje</td><td>La actuación y el cuerpo real — la base de todo</td></tr>
+        <tr><td>Proceso de cambio de fondos</td><td>Antes/después de cada escena transformada por IA</td></tr>
+        <tr><td>Producción musical: prompts y versiones</td><td>La música es 100% IA dirigida — documentar cada decisión</td></tr>
+        <tr><td>Efectos aplicados vs descartados</td><td>Criterio de selección de efectos del género musical</td></tr>
+        <tr><td>Reacciones del equipo de actores</td><td>Testimonio en tiempo real de cómo se siente trabajar así</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 3.0 -->
+    <h3>3.0 — Rulo y Yo</h3>
+    <span class="proy-tag">Documental · Homenaje a Michael Moore</span>
+    <table class="tabla">
+      <thead><tr><th>Qué registrar</th><th>Por qué importa</th></tr></thead>
+      <tbody>
+        <tr><td>Registro de cada entrevista completa</td><td>Archivo primario — los testimonios son la columna del doc</td></tr>
+        <tr><td>Proceso de investigación con IA</td><td>Demuestra cómo la IA acelera investigación documental</td></tr>
+        <tr><td>Reconstrucciones visuales: proceso completo</td><td>Antes/después de cada escena sin archivo real</td></tr>
+        <tr><td>Decisiones editoriales con justificación</td><td>El director tiene una postura — documentar cada elección</td></tr>
+        <tr><td>Respuestas del personaje o industria</td><td>Si hay reacciones externas, son parte del documental</td></tr>
+        <tr><td>Línea de tiempo del proyecto</td><td>Desde primer contacto con testimonios hasta corte final</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 08 REPORTE DE CIERRE -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">08</div>
+      <div class="sec-titles">
+        <span class="sec-tag">Al terminar cada proyecto</span>
+        <h2>Reporte de cierre</h2>
+      </div>
+    </div>
+
+    <p class="body">Al terminar cada proyecto se redacta un reporte de caso que alimenta el manifiesto. Estructura obligatoria:</p>
+
+    <table class="tabla">
+      <thead><tr><th>Sección</th><th>Contenido</th></tr></thead>
+      <tbody>
+        <tr><td>Resumen ejecutivo</td><td>3-5 líneas: qué se hizo, con qué herramientas, qué resultado</td></tr>
+        <tr><td>Variables observadas</td><td>Qué controlamos, qué no pudimos controlar, qué fue sorpresa</td></tr>
+        <tr><td>Decisiones clave documentadas</td><td>Las 5-10 decisiones más importantes del proyecto con justificación</td></tr>
+        <tr><td>Errores y aprendizajes</td><td>Qué falló, por qué, y cómo se resolvió o se dejó sin resolver</td></tr>
+        <tr><td>Métricas de producción</td><td>Tiempo total, costo estimado vs producción tradicional, equipo</td></tr>
+        <tr><td>Evidencia seleccionada</td><td>Links a capturas, videos de proceso, prompts más relevantes</td></tr>
+        <tr><td>Conclusión para el manifiesto</td><td>¿Este proyecto confirma, matiza o contradice la hipótesis?</td></tr>
+      </tbody>
+    </table>
+
+    <div class="infobox" data-label="Regla final">
+      <p>El reporte de cierre no se escribe de memoria.</p>
+      <p class="mono">Se construye con el material documentado durante el proceso.<br><br>
+      Si no documentaste durante el proceso, no hay reporte.<br>
+      Por eso este protocolo existe.</p>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cierre-section">
+    <div class="cierre-frase">
+      La excusa de que crear<br>
+      <span>cuesta demasiado</span><br>
+      ya no existe.
+    </div>
+    <p class="cierre-sub">Este protocolo existe para que tengamos la evidencia que lo demuestra.</p>
+    <div class="cierre-divider"></div>
+    <p class="cierre-firma">
+      Planta Baja Producciones · DOC PB-002 · Versión 1.0<br>
+      Ciudad de México · 2026 · Uso interno<br>
+      En colaboración con Somos Enlace IA · quieroaprenderia.com
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Planta Baja Producciones · CDMX · 2026</span>
+    <span>PB-002 · Protocolo de Documentación</span>
+    <span>Uso interno · quieroaprenderia.com</span>
+  </footer>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

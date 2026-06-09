@@ -8,7 +8,95 @@ La regla: documenta el qué y el por qué. No el cómo exacto.
 ---
 
 <!-- PEGA LA NUEVA ENTRADA AQUÍ ARRIBA, ANTES DE LA LÍNEA DE ABAJO -->
+## 2026-06-08 · Ojos Láser (1.1)
 
+**Qué pasó hoy:**
+Sesión intensiva de desarrollo visual y producción. Se trabajaron simultáneamente
+personajes, locaciones, estructura de escenas y base del storyboard.
+
+**Archivos y avances generados:**
+- Segunda versión de diseño de personajes — expression sheets, full body, turnarounds
+- Segunda versión de locaciones — parque gótico, bosque, ciudad, interiores
+- Airtable actualizado con 40+ escenas estructuradas por mundo, locación,
+  personajes, tipo de plano, diálogo y estado de producción
+- Primera base del storyboard — 44 planos cargados, listos para desarrollar
+- Storytelling revisado con nuevas escenas incorporadas
+- Notas de producción corregidas
+
+**Decisiones tomadas:**
+- Se requirieron muchas ejecuciones para encontrar la dirección visual correcta
+  en personajes y locaciones. Cada resultado fue evaluado antes de continuar.
+- El storyboard se construyó sobre el shooting list existente, no desde cero.
+- Se decidió cargar los 44 planos en bloques de 50 en una sola llamada.
+
+**Error documentado — importante:**
+Al terminar el storytelling se detectó que faltaban escenarios por crear.
+La IA no los recordó al trabajar — no los tenía en contexto.
+El error se detectó al revisar el guión y el shooting list con ojo humano.
+
+Esto confirma algo clave del experimento: **la IA no reemplaza la revisión humana.**
+Sin el criterio del director revisando el trabajo completo, esos escenarios
+habrían quedado fuera. Lo híbrido no es opcional — es lo que hace funcionar el proceso.
+
+**Lo que demuestra esta sesión:**
+Las decenas de ejecuciones de personajes y locaciones no son ineficiencia —
+son el proceso de dirección artística. Cada imagen descartada es una decisión tomada.
+La cantidad de iteraciones es evidencia de que hubo criterio, no delegación.
+
+### Evidencia
+
+**Iteraciones de personajes — carpeta de trabajo**
+![Iteraciones personajes carpeta](evidencia/2026-06-08-personajes-carpeta.png)
+*Decenas de ejecuciones de diseño de personajes: expression sheets, full body,
+turnarounds. Cada versión evaluada antes de continuar.*
+
+---
+
+**Historial de locaciones en Magnific**
+![Historial locaciones Magnific](evidencia/2026-06-08-locaciones-historial.png)
+*Historial completo de generación de locaciones — junio 2026.
+Parque gótico, bosque, ciudad, interiores. Muchas ejecuciones para
+encontrar la dirección visual correcta.*
+
+---
+
+**Iteraciones de locaciones — grilla**
+![Iteraciones locaciones grilla](evidencia/2026-06-08-locaciones-grilla.png)
+*Vista de grilla del proceso de locaciones. Los resultados descartados
+son tan importantes como los seleccionados — muestran el criterio aplicado.*
+
+---
+
+**Iteraciones de personajes — grilla**
+![Iteraciones personajes grilla](evidencia/2026-06-08-personajes-grilla.png)
+*Vista de grilla del proceso de personajes. Desde los primeros diseños
+hasta los turnarounds y expression sheets finales.*
+
+---
+
+**Airtable — estructura de escenas**
+![Airtable escenas Ojos Láser](evidencia/2026-06-08-airtable-escenas.png)
+*40+ escenas estructuradas: SceneName, SceneID, Secuencia, Mundo, Locación,
+Personajes, Notas, Guión, Tema, NotasDirector, DuraciónEscena, Estado.*
+
+---
+
+**Storyboard base — 44 planos**
+![Storyboard base Airtable](evidencia/2026-06-08-storyboard-base.png)
+*Primera base del storyboard: 44 planos con tipo de plano, descripción
+de acción, diálogo y estado. Cargados en bloques de 50 en una sola llamada.*
+
+---
+
+**Nota del proceso — bloques de carga**
+![Nota bloques de carga](evidencia/2026-06-08-nota-bloques.png)
+*"Arranco. Son 44 planos — los cargo en bloques de 50 (caben todos en una sola llamada)."
+Decisión de producción documentada en tiempo real.*
+
+**Siguiente paso:**
+Crear los escenarios faltantes detectados en la revisión.
+Continuar desarrollo del storyboard plano por plano.
+Aprobar diseños finales de personajes y locaciones.
 ---
 
 ## 2026-06-04 · La Pandilla del Bosque (1.0)

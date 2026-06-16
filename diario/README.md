@@ -9,100 +9,169 @@ La regla: documenta el qué y el por qué. No el cómo exacto.
 
 <!-- PEGA LA NUEVA ENTRADA AQUÍ ARRIBA, ANTES DE LA LÍNEA DE ABAJO -->
 
-Diario de Producción — Planta Baja Producciones
-Registro cronológico del experimento en curso. Las entradas más recientes van arriba. Las más antiguas abajo.
+## 2026-06-11/15 · Ojos Láser (1.1)
 
-La regla: documenta el qué y el por qué. No el cómo exacto.
+**Qué pasó esta semana:**
+Semana de producción intensiva. Se cerraron personajes y locaciones, se completó
+el storyboard, se generaron clips de video con movimiento, se compuso música maqueta,
+se produjeron voces de narración y se ensambló la primera mitad del animatic.
+Se agotaron todos los créditos de una membresía Pro de Kling para lograrlo.
 
-2026-06-11/15 · Ojos Láser (1.1)
-Qué pasó esta semana: Semana de producción intensiva. Se cerraron personajes y locaciones, se completó el storyboard, se generaron los primeros clips de video con movimiento, se compuso la música maqueta, se produjeron voces de narración y se ensambló la primera mitad del animatic. Se agotaron todos los créditos de una membresía Pro de Kling para lograrlo.
+**Herramientas usadas y decisiones tomadas:**
 
-Herramientas usadas y decisiones tomadas:
+**ChatGPT** — mejores resultados para personajes finales. Decisión por comparativa.
 
-ChatGPT — se decidió invertir en esta herramienta tras evaluar que daba mejores resultados para los personajes finales. Decisión por comparativa de resultados.
+**Magnific — Referencias de consistencia** — @dante_c + @img1 como referencias
+en cada generación. Sin esto, el personaje cambia de plano a plano.
 
-Magnific — Desarrollo de personajes y locaciones — decenas de ejecuciones para cerrar el diseño definitivo. Expression sheets, full body, turnarounds. Locaciones: parque gótico, bosque, ciudad, interiores. Cada resultado evaluado antes de continuar — los descartados son tan importantes como los seleccionados.
+**Magnific — Pruebas de cámara** — función "Cambiar cámara": 2 cámaras,
+Girar 184°, Vertical 1°, Zoom medium close. Múltiples opciones por escenario.
 
-Magnific — Referencias de consistencia — @dante_c + @img1 como referencias en cada generación para mantener consistencia visual entre planos. Sin esto, el personaje cambia de plano a plano.
+**Prompts con paleta exacta** — estilo codificado en hexadecimal:
+Greg Capullo comic book style · purples #7A6F9B · blues #3C648C
+pinks #F0A3C7 · skin #E8C4A0 · shadows #2D3142
 
-Magnific — Pruebas de cámara — función "Cambiar cámara" para controlar ángulos a detalle. Configuración: 2 cámaras, Girar 184°, Vertical 1°, Zoom medium close. Múltiples opciones por escenario para seleccionar composición.
+**Airtable — Storyboard** — 44 planos llenados manualmente con imágenes
+de referencia por escena. Estados: Draft 1 / En proceso.
 
-Prompts con paleta exacta — estilo codificado en hexadecimal en cada prompt: Greg Capullo comic book style · bold ink lines · cross-hatching in shadows purples #7A6F9B · blues #3C648C · pinks #F0A3C7 · skin #E8C4A0 · shadows #2D3142 Textured aged paper, pop-up depth, storybook frame. La paleta no es sugerencia — es instrucción exacta en cada generación.
+**ElevenLabs — Narración** — voz David, Deep Warm Narration.
+806 caracteres, 0:20 de audio. El texto es el guión — convertido a voz como maqueta.
 
-Airtable — Escenas — 40+ escenas estructuradas con mundo, locación, personajes, tipo de plano, diálogo, notas del director y estado de producción. Se detectó en revisión que faltaban escenarios — identificado por ojo humano, no por la IA. Corregido manualmente.
+**Kling Video 3.0** — 20+ clips generados con prompts de movimiento específicos
+por plano. Cada movimiento decidido por el director según la escena.
 
-Airtable — Storyboard — llenado manualmente plano por plano con imágenes de referencia por escena. 44 planos. Estados: Draft 1 / En proceso. Cargados en bloques de 50 en una sola llamada.
+**COSTO REAL:** Se agotaron todos los créditos de una membresía Pro de Kling
+para completar la mitad del animatic. Producción real con costo real — accesible
+para un equipo independiente, imposible de ignorar como dato del experimento.
 
-ElevenLabs — Narración — voz David, Deep Warm Narration. 806 caracteres, 0:20 de audio. El texto es el guión — no se generó, se escribió primero y se convirtió a voz como herramienta de maqueta.
+**Suno — Música maqueta** — composición dirigida por escena:
+PL14-18: tema de Sora entra gradualmente.
+PL19-22: dos temas juntos.
+PL23-26: música casi se detiene — solo notas sueltas.
+Tracks: Waltz Cigarbox, The Last Waltz, Spring Tension.
 
-Kling Video 3.0 — 20+ clips generados con prompts de movimiento específicos: slow zoom out, face tilt, tilt up, static medium, static wide, very slow, gentle lateral, birds, turtle walk. Cada movimiento decidido por el director según lo que necesita cada escena.
+**CapCut — Ensamble** — timeline manual: clips de video + voz ElevenLabs
+en múltiples capas + tres tracks de música. ~4 minutos.
+La edición es completamente humana — la IA proveyó el material.
 
-COSTO REAL DOCUMENTADO: Se agotaron todos los créditos de una membresía Pro de Kling para completar la mitad del animatic. Esto es evidencia directa del costo real — no es gratuito ni mágico. Es producción con herramientas nuevas que tienen un precio real pero accesible para un equipo independiente.
+**Lo que demuestra esta semana:**
+Paleta en hexadecimal, movimientos de cámara por escena, música plano por plano.
+La IA ejecutó instrucciones precisas. El director dirigió cada decisión.
 
-Suno — Música maqueta — composición dirigida por escena: PL14-18: tema de Sora entra gradualmente. PL19-22: dos temas juntos. PL23-26: música casi se detiene — solo notas sueltas. Tracks: Waltz Cigarbox, The Last Waltz, Spring Tension.
+---
 
-CapCut — Ensamble del animatic — timeline completo ensamblado manualmente. Clips de video + capas de voz ElevenLabs + tres tracks de música. ~4 minutos. La edición es completamente humana — la IA proveyó el material.
+### Evidencia
 
-Estado al cierre: Primera mitad del animatic animada. Se necesita nueva membresía de Kling para completar la segunda mitad.
+**Prompt completo con paleta de color**
+![Prompt paleta](evidencia/2026-06-15-prompt-paleta.png)
+*La paleta no es sugerencia — es instruccion en hexadecimal:
+purples #7A6F9B · blues #3C648C · pinks #F0A3C7 · skin #E8C4A0 · shadows #2D3142*
 
-Lo que demuestra esta semana: Cada herramienta recibió instrucciones específicas — paleta en hexadecimal, movimientos de cámara definidos por escena, estructura musical plano por plano. La IA no tomó decisiones creativas. Ejecutó instrucciones precisas. El error de escenarios faltantes lo detectó el ojo humano, no la IA. El costo real demuestra que esto no es magia — es producción accesible.
+---
 
-Evidencia
-Personajes — carpeta de trabajo en Magnific Personajes carpeta Magnific Decenas de ejecuciones: expression sheets, full body, turnarounds. Cada versión evaluada antes de continuar.
+**Referencias de consistencia en Magnific**
+![Referencias Magnific](evidencia/2026-06-15-magnific-referencias.png)
+*@dante_c + @img1 como referencias en cada generacion.
+Sin esto, el personaje cambia de plano a plano.*
 
-Historial de locaciones en Magnific Historial locaciones Historial completo de generación — junio 2026. Parque gótico, bosque, ciudad, interiores. Muchas ejecuciones para encontrar la dirección correcta.
+---
 
-Locaciones — grilla de iteraciones Locaciones grilla Los resultados descartados son tan importantes como los seleccionados — muestran el criterio aplicado.
+**Notas de direccion por plano**
+![Notas direccion](evidencia/2026-06-15-notas-direccion.png)
+*Instrucciones por plano: encuadre base, movimiento de camara,
+elemento dramatico prioritario, iluminacion clave.*
 
-Personajes — grilla de iteraciones Personajes grilla Desde primeros diseños hasta turnarounds y expression sheets finales.
+---
 
-Airtable — estructura de escenas Airtable escenas 40+ escenas: SceneName, SceneID, Mundo, Locación, Personajes, Notas, Guión, Tema, NotasDirector, DuraciónEscena, Estado.
+**Magnific — Prueba de cambio de camara**
+![Magnific camara](evidencia/2026-06-15-magnific-camara.png)
+*Control de angulo: Girar 184 grados, Vertical 1 grado, Zoom medium close.*
 
-Nota de producción — bloques de carga Nota bloques "Arranco. Son 44 planos — los cargo en bloques de 50 en una sola llamada." Decisión de producción documentada en tiempo real.
+---
 
-Storyboard base — 44 planos en Airtable Storyboard base Primera base del storyboard con tipo de plano, descripción de acción, diálogo y estado. Llenado manualmente.
+**Airtable — Storyboard llenado con imagenes**
+![Airtable storyboard](evidencia/2026-06-15-airtable-storyboard.png)
+*Planos 12-35 con imagen de referencia por escena. Llenado manualmente.*
 
-Prompt completo con paleta de color Prompt paleta La paleta no es sugerencia — es instrucción en hexadecimal: purples #7A6F9B · blues #3C648C · pinks #F0A3C7 · skin #E8C4A0 · shadows #2D3142
+---
 
-Referencias de consistencia en Magnific Referencias Magnific @dante_c + @img1 como referencias en cada generación. Sin esto, el personaje cambia de plano a plano.
+**ElevenLabs — narracion de Dante**
+![ElevenLabs narracion](evidencia/2026-06-15-elevenlabs-narracion.png)
+*Voz David, Deep Warm Narration. 806 caracteres, 0:20 de audio.*
 
-Notas de dirección por plano Notas dirección Instrucciones específicas por plano: encuadre base, movimiento de cámara, elemento dramático prioritario, iluminación clave.
+---
 
-Magnific — Prueba de cambio de cámara Magnific cámara Control de ángulo: Girar 184°, Vertical 1°, Zoom medium close. Múltiples opciones para seleccionar la composición correcta.
+**Suno — musica maqueta**
+![Suno musica](evidencia/2026-06-15-suno-musica.png)
+*Paper Moon A — neoclassical waltz. Estructura dirigida por planos.*
 
-Airtable — Storyboard llenado con imágenes Airtable storyboard imágenes Planos 12-35 con imagen de referencia por escena. Llenado manualmente.
+---
 
-ElevenLabs — narración de Dante ElevenLabs narración Voz David, Deep Warm Narration. 806 caracteres, 0:20 de audio.
+**Suno — notas de estilo por plano**
+![Suno notas](evidencia/2026-06-15-suno-notas-estilos.png)
+*PL14-18 entrada gradual / PL19-22 dos temas / PL23-26 casi silencio.*
 
-Suno — música maqueta Suno música "Paper Moon A..." — neoclassical waltz. Estructura dirigida por planos.
+---
 
-Suno — notas de estilo por plano Suno notas PL14-18 entrada gradual / PL19-22 dos temas / PL23-26 casi silencio. La música sigue la narrativa — no al revés.
+**Kling — generacion de video en proceso**
+![Kling video](evidencia/2026-06-15-kling-video.png)
+*Slow zoom out desde parpados cerrados de Dante. 1080p.*
 
-Kling — generación de video en proceso Kling video generando Slow zoom out desde párpados cerrados de Dante. 1080p. Tiempo estimado: 3 minutos.
+---
 
-Kling — carpeta de clips generados Kling clips carpeta 20+ clips organizados por tipo de movimiento de cámara.
+**Kling — clips generados**
+![Kling clips](evidencia/2026-06-15-kling-clips.png)
+*20+ clips con diferentes movimientos de camara por plano.
+Se agotaron todos los creditos Pro para completar la mitad del animatic.*
 
-Kling — múltiples generaciones Kling clips múltiples Evidencia del volumen de generación que consumió la membresía Pro completa.
+---
 
-CapCut — timeline del animatic completo CapCut timeline Video + voz ElevenLabs en múltiples capas + tres tracks de música. ~4 minutos. La edición es humana — la IA proveyó el material.
+**Kling — carpeta de clips**
+![Kling clips carpeta](evidencia/2026-06-15-clips-carpeta.png)
+*Clips organizados por tipo de movimiento. Evidencia del volumen de produccion.*
 
-Siguiente paso: Revisar primera mitad del animatic. Adquirir nueva membresía de Kling. Evaluar ritmo y timing antes de continuar.
+---
 
-2026-06-11/15 · Rulo y Yo (3.0)
-Qué pasó esta semana: Primera sesión formal de investigación con Claude como herramienta de búsqueda y síntesis sobre Rulo y el contexto de la radio mexicana.
+**CapCut — timeline del animatic**
+![CapCut animatic](evidencia/2026-06-15-animatic-capcut.png)
+*Video + voz ElevenLabs en capas + tres tracks de musica. ~4 minutos.
+La edicion es humana — la IA proveco el material.*
 
-Herramientas y decisiones: Claude identificó y sintetizó fuentes primarias y secundarias. La evaluación de cuáles sirven para el documental es humana.
+**Siguiente paso:**
+Revisar primera mitad del animatic. Adquirir nueva membresia de Kling.
+Evaluar ritmo y timing antes de continuar.
 
-Fuentes identificadas: — Chilango: confirma rol de Rulo como director editorial de FRENTE. Activo en Convoy con programa Poderoso, lunes a viernes 9-11am. — Billboard Español: perfil de Jordi Puig como creador del Vive Latino. Confirma entrada a OCESA en 1996 y 24 ediciones producidas. — Tesis UNAM/FES: documenta que el Vive Latino nació porque Órbita y Radioactivo crearon audiencia para el rock en español sin darle espacio físico a las bandas. La radio creó el público. El festival se aprovechó.
+---
 
-Hallazgo clave: La tesis UNAM/FES confirma el argumento central del documental con evidencia académica.
+## 2026-06-11/15 · Rulo y Yo (3.0)
 
-Lo que demuestra: La IA acelera la investigación. Claude encontró las fuentes. El director decide cuáles cuentan la historia.
+**Qué pasó esta semana:**
+Primera sesion formal de investigacion con Claude como herramienta
+de busqueda y sintesis sobre Rulo y el contexto de la radio mexicana.
 
-Evidencia
-Investigación — fuentes identificadas Rulo investigación Fuentes con links verificables. La tesis UNAM/FES como hallazgo central: la radio creó el público, el festival se aprovechó.
+**Fuentes identificadas:**
+— Chilango: confirma rol de Rulo como director editorial de FRENTE.
+— Billboard Espanol: perfil de Jordi Puig, creador del Vive Latino, OCESA 1996.
+— Tesis UNAM/FES: Radioactivo creo audiencia para el rock en espanol
+  pero no le dio espacio fisico a las bandas. La radio creo el publico.
+  El festival se aprovecho.
 
-Siguiente paso: Revisar fuentes en profundidad. Iniciar lista de preguntas para testimonios.
+**Hallazgo clave:**
+La tesis UNAM/FES confirma el argumento central con evidencia academica.
+
+**Lo que demuestra:**
+Claude acelera la investigacion. El director decide que fuentes cuentan la historia.
+
+---
+
+### Evidencia
+
+**Investigacion — fuentes identificadas**
+![Rulo investigacion](evidencia/2026-06-15-rulo-investigacion.png)
+*Fuentes con links verificables. La tesis UNAM/FES como hallazgo central.*
+
+**Siguiente paso:**
+Revisar fuentes. Iniciar preguntas para testimonios.
 
 2026-06-08 · Ojos Láser (1.1)
 Qué pasó hoy: Sesión intensiva de desarrollo visual y producción. Se trabajaron simultáneamente personajes, locaciones, estructura de escenas y base del storyboard.

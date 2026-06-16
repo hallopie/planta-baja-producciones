@@ -62,62 +62,62 @@ La IA ejecutó instrucciones precisas. El director dirigió cada decisión.
 
 ### Evidencia
 
-![Prompt paleta](diario/evidencia/2026-06-15-prompt-paleta.png)
+[Ver imagen — Prompt paleta](evidencia/2026-06-15-prompt-paleta.png)
 *La paleta no es sugerencia — es instrucción en hexadecimal: purples #7A6F9B · blues #3C648C · pinks #F0A3C7 · skin #E8C4A0 · shadows #2D3142*
 
 ---
 
-![Referencias Magnific](diario/evidencia/2026-06-15-magnific-referencias.png)
+[Ver imagen — Referencias Magnific](evidencia/2026-06-15-magnific-referencias.png)
 *@dante_c + @img1 como referencias en cada generación. Sin esto, el personaje cambia de plano a plano.*
 
 ---
 
-![Notas direccion](diario/evidencia/2026-06-15-notas-direccion.png)
+[Ver imagen — Notas direccion](evidencia/2026-06-15-notas-direccion.png)
 *Instrucciones por plano: encuadre base, movimiento de cámara, elemento dramático prioritario, iluminación clave.*
 
 ---
 
-![Magnific camara](diario/evidencia/2026-06-15-magnific-camara.png)
+[Ver imagen — Magnific camara](evidencia/2026-06-15-magnific-camara.png)
 *Control de ángulo: Girar 184°, Vertical 1°, Zoom medium close.*
 
 ---
 
-![Airtable storyboard](diario/evidencia/2026-06-15-airtable-storyboard.png)
+[Ver imagen — Airtable storyboard](evidencia/2026-06-15-airtable-storyboard.png)
 *Planos 12-35 con imagen de referencia por escena. Llenado manualmente.*
 
 ---
 
-![ElevenLabs narracion](diario/evidencia/2026-06-15-elevenlabs-narracion.png)
+[Ver imagen — ElevenLabs narracion](evidencia/2026-06-15-elevenlabs-narracion.png)
 *Voz David, Deep Warm Narration. 806 caracteres, 0:20 de audio.*
 
 ---
 
-![Suno musica](diario/evidencia/2026-06-15-suno-musica.png)
+[Ver imagen — Suno musica](evidencia/2026-06-15-suno-musica.png)
 *Paper Moon A — neoclassical waltz. Estructura dirigida por planos.*
 
 ---
 
-![Suno notas](diario/evidencia/2026-06-15-suno-notas-estilos.png)
+[Ver imagen — Suno notas](evidencia/2026-06-15-suno-notas-estilos.png)
 *PL14-18 entrada gradual / PL19-22 dos temas / PL23-26 casi silencio.*
 
 ---
 
-![Kling video](diario/evidencia/2026-06-15-kling-video.png)
+[Ver imagen — Kling video](evidencia/2026-06-15-kling-video.png)
 *Slow zoom out desde párpados cerrados de Dante. 1080p.*
 
 ---
 
-![Kling clips](diario/evidencia/2026-06-15-kling-clips.png)
+[Ver imagen — Kling clips](evidencia/2026-06-15-kling-clips.png)
 *20+ clips con diferentes movimientos de cámara. Se agotaron todos los créditos Pro.*
 
 ---
 
-![Kling clips carpeta](diario/evidencia/2026-06-15-clips-carpeta.png)
+[Ver imagen — Kling clips carpeta](evidencia/2026-06-15-clips-carpeta.png)
 *Clips organizados por tipo de movimiento. Evidencia del volumen de producción.*
 
 ---
 
-![CapCut animatic](diario/evidencia/2026-06-15-animatic-capcut.png)
+[Ver imagen — CapCut animatic](evidencia/2026-06-15-animatic-capcut.png)
 *Video + voz ElevenLabs en capas + tres tracks de música. ~4 minutos. La edición es humana.*
 
 **Siguiente paso:**
@@ -147,7 +147,7 @@ Claude acelera la investigación. El director decide qué fuentes cuentan la his
 
 ### Evidencia
 
-![Rulo investigacion](diario/evidencia/2026-06-15-rulo-investigacion.png)
+[Ver imagen — Rulo investigacion](evidencia/2026-06-15-rulo-investigacion.png)
 *Fuentes con links verificables. La tesis UNAM/FES como hallazgo central.*
 
 **Siguiente paso:**
@@ -191,37 +191,37 @@ son el proceso de dirección artística. Cada imagen descartada es una decisión
 
 ### Evidencia
 
-![Personajes carpeta](diario/evidencia/2026-06-08-personajes-carpeta.png)
+[Ver imagen — Personajes carpeta](evidencia/2026-06-08-personajes-carpeta.png)
 *Decenas de ejecuciones: expression sheets, full body, turnarounds. Cada versión evaluada antes de continuar.*
 
 ---
 
-![Locaciones historial](diario/evidencia/2026-06-08-locaciones-historial.png)
+[Ver imagen — Locaciones historial](evidencia/2026-06-08-locaciones-historial.png)
 *Historial completo de generación — junio 2026. Parque gótico, bosque, ciudad, interiores.*
 
 ---
 
-![Locaciones grilla](diario/evidencia/2026-06-08-locaciones-grilla.png)
+[Ver imagen — Locaciones grilla](evidencia/2026-06-08-locaciones-grilla.png)
 *Los resultados descartados son tan importantes como los seleccionados — muestran el criterio aplicado.*
 
 ---
 
-![Personajes grilla](diario/evidencia/2026-06-08-personajes-grilla.png)
+[Ver imagen — Personajes grilla](evidencia/2026-06-08-personajes-grilla.png)
 *Desde primeros diseños hasta turnarounds y expression sheets finales.*
 
 ---
 
-![Airtable escenas](diario/evidencia/2026-06-08-airtable-escenas.png)
+[Ver imagen — Airtable escenas](evidencia/2026-06-08-airtable-escenas.png)
 *40+ escenas: SceneName, SceneID, Mundo, Locación, Personajes, Notas, Guión, Estado.*
 
 ---
 
-![Storyboard base](diario/evidencia/2026-06-08-storyboard-base.png)
+[Ver imagen — Storyboard base](evidencia/2026-06-08-storyboard-base.png)
 *44 planos con tipo de plano, descripción de acción, diálogo y estado. Cargados en bloques de 50.*
 
 ---
 
-![Nota bloques](diario/evidencia/2026-06-08-nota-bloques.png)
+[Ver imagen — Nota bloques](evidencia/2026-06-08-nota-bloques.png)
 *"Arranco. Son 44 planos — los cargo en bloques de 50 (caben todos en una sola llamada)."*
 
 **Siguiente paso:**
@@ -257,22 +257,22 @@ y qué ignorar fueron humanas. El criterio narrativo no se delegó.
 
 ### Evidencia
 
-![Borrador manuscrito](diario/evidencia/2026-06-04-borrador-manuscrito.jpeg)
+[Ver imagen — Borrador manuscrito](evidencia/2026-06-04-borrador-manuscrito.jpeg)
 *Las correcciones a mano son el punto de partida del Draft 2. El proceso empieza en papel — no en el prompt.*
 
 ---
 
-![Guion v2 portada](diario/evidencia/2026-06-04-guion-v2-portada.png)
+[Ver imagen — Guion v2 portada](evidencia/2026-06-04-guion-v2-portada.png)
 *La Pandilla de Frenos · Guión original · Planta Baja Producciones · Versión 2.0 — 2026.*
 
 ---
 
-![Notas edicion v3](diario/evidencia/2026-06-04-notas-edicion-v3.png)
+[Ver imagen — Notas edicion v3](evidencia/2026-06-04-notas-edicion-v3.png)
 *El corrector automatizado generó esta lista. Cada punto revisado y aprobado o rechazado por el director.*
 
 ---
 
-![Archivos del dia](diario/evidencia/2026-06-04-archivos.png)
+[Ver imagen — Archivos del dia](evidencia/2026-06-04-archivos.png)
 *guion_revision_v1 · 9:05 p.m. / guion_v2 · 8:53 p.m. Timestamps del registro.*
 
 **Siguiente paso:**
@@ -311,7 +311,7 @@ FORMATO DE NUEVA ENTRADA — copia esto, pégalo arriba de la línea de guiones 
 
 ### Evidencia
 
-![Descripcion](diario/evidencia/YYYY-MM-DD-nombre.png)
+[Ver imagen — Descripcion](evidencia/YYYY-MM-DD-nombre.png)
 *Pie de foto — qué muestra y por qué importa.*
 
 **Siguiente paso:**
